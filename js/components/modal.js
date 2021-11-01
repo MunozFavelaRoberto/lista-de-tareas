@@ -1,13 +1,9 @@
-import Alert from './alert.js';
-
 export default class Modal{
     constructor(){
         this.title = document.getElementById('modal-title');
         this.description = document.getElementById('modal-description');
         this.btn = document.getElementById('modal-btn');
         this.completed = document.getElementById('modal-completed');
-        this.alert = new Alert('modal-alert');
-
         this.todo = null;
     }
 
@@ -20,7 +16,7 @@ export default class Modal{
 
     onClick(callback){
         this.btn.onclick = () => {
-            if (!this.title.value || !this.description.value) {
+            if (title.value === '' || description.value === '') {
                 this.alert.show('Title and description are required');
                 return;
             } 
